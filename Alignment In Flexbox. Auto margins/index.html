@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Alignment In Flexbox. Auto margins</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page">
+	<div class="page__container">
+		<header class="page__header">
+			<h1>Alignment In Flexbox. Auto margins</h1>
+			<p>
+				Before reading the cheatsheet you should look at the following graphic that I use to mark elements areas:
+			</p>
+			<div class="page__hints">
+				<span class="hint hint_flex-container">the flex-container area</span>
+				<span class="hint hint_flex-item">the flex item area</span>
+			</div>
+		</header>
+		<main class="page__content">
+			<h2>The flex-container has one item</h2>
+			<p>When the flex-container has one item and we set the margin to auto then a browser will try to give as big space as it's possible in the direction to borders of the flex-container.</p>
+			<div class="page__demos">
+				<!-- start example 1 -->
+				<div class="demo">
+					<div class="demo__container">
+						<div class="line line_h line_top line_left" style="--lineWidth: 310px; --lineTop: 80px; --lineTextTop: -18px; --lineTextLeft: 148px;">
+							<span class="line__text">margin-left: auto (305px)</span>
+						</div>								
+						<div class="line line_v line_bottom line_right" style="--lineHeight: 109px; --lineRight: 147px;--lineTextTop: -30px;--lineTextLeft: -178px;">
+							<span class="line__text">margin-bottom: auto (105px)</span>
+						</div>																					
+						<div class="demo__flex-container">			
+							<div class="demo__item m-l m-b" data-flex-item-sizes="95x95px"></div>
+						</div>
+					</div>
+				</div>	
+				<!-- end example 1 -->
+				<!-- start example 2 -->
+				<div class="demo">
+					<div class="demo__container">
+						<div class="line line_h line_bottom line_left" style="--lineWidth: 310px; --lineBottom: 30px; --lineTextTop: -18px; --lineTextLeft: 148px;">
+							<span class="line__text">margin-left: auto (305px)</span>
+						</div>								
+						<div class="line line_v line_bottom line_right" style="--lineHeight: 109px; --lineBottom: 95px;--lineRight: 147px;--lineTextLeft: -157px;--lineTextTop: 37px;">
+							<span class="line__text">margin-top: auto (105px)</span>
+						</div>																					
+						<div class="demo__flex-container">			
+							<div class="demo__item m-l m-t" data-flex-item-sizes="95x95px"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example 2 -->
+				<!-- start example 3 -->
+				<div class="demo">
+					<div class="demo__container">
+						<div class="line line_h line_bottom line_right" style="--lineWidth: 310px; --lineBottom: 30px; --lineTextTop: -18px; --lineTextLeft: 15px;">
+							<span class="line__text">margin-right: auto (305px)</span>
+						</div>								
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 109px;--lineBottom: 95px;--lineLeft: 147px;--lineTextLeft: 13px;--lineTextTop: 37px;">
+							<span class="line__text">margin-top: auto (105px)</span>
+						</div>																					
+						<div class="demo__flex-container">			
+							<div class="demo__item m-r m-t" data-flex-item-sizes="95x95px"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example 3 -->
+			</div>
+			<p>
+				If the sizes of flex item equals or more of flex-container's sizes the margin will be set in 0. 
+			</p>
+			<div class="page__demos">
+				<!-- start example4  -->
+				<div class="demo">
+					<div class="demo__container">		
+						<div class="line line_h line_top line_right" style="--lineWidth: 0;--lineTop: 123px;--lineTextTop: 20px;--lineTextLeft: -153px;--lineLeft: 194px;">
+							<span class="line__text">margin-right: auto (0px)</span>
+						</div>				
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 110px;--lineLeft: 118px;--lineTextLeft: 13px;--lineTextTop: -23px;">
+							<span class="line__text">margin-bottom: auto<br>(105px)</span>
+						</div>
+						<div class="demo__flex-container">			
+							<div class="demo__item m-r m-b" data-flex-item-sizes="400x95px" style="width: 400px;"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example4  -->			
+				<!-- start example5  -->
+				<div class="demo">
+					<div class="demo__container">		
+						<div class="line line_h line_top line_left" style="--lineWidth: 310px;--lineTop: 123px;--lineTextTop: 15px;--lineTextLeft: 15px;--lineLeft: 192px;">
+							<span class="line__text">margin-right: auto (305px)</span>
+						</div>				
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 0px;--lineLeft: 192px;--lineTextLeft: 14px;--lineTextTop: -20px;">
+							<span class="line__text">margin-bottom: auto (0px)</span>
+						</div>
+						<div class="demo__flex-container">			
+							<div class="demo__item m-r m-b" data-flex-item-sizes="95x200px" style="height: 200px;"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example5  -->						
+			</div>
+			<h2>The flex-cotainer has more than one item</h2>
+			<p>When the flex-container has more than one item and we set the margin to auto for them then a browser will try to give as big space as it's possible in the direction to borders of others items and if they're not then to borders of the flex-container.</p>
+			<!-- start example 4 -->
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="line line_h line_top line_left" style="--lineWidth: 75px;--lineTop: 115px;--lineTextTop: 20px;--lineTextLeft: 10px;">
+							<span class="line__text">margin-left: auto<br>(70px)</span>
+						</div>				
+						<div class="line line_h line_top line_left" style="--lineWidth: 75px;--lineTop: 115px;--lineTextTop: 20px;--lineTextLeft: -25px;--lineLeft: 262px;">
+							<span class="line__text">margin-left: auto<br>(70px)</span>
+						</div>
+						<div class="line line_h line_top line_right" style="--lineWidth: 75px;--lineTop: 115px;--lineTextTop: 20px;--lineTextLeft: -45px;--lineLeft: 262px;">
+							<span class="line__text">margin-right: auto<br>(70px)</span>
+						</div>				
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 110px;--lineLeft: 220px;--lineTextLeft: 8px;--lineTextTop: 27px;">
+							<span class="line__text">margin-bottom: auto<br>(105px)</span>
+						</div>
+						<div class="line line_v line_bottom line_right" style="--lineHeight: 110px;--lineRight: 237px;--lineTextTop: 27px;--lineTextLeft: 7px;">
+							<span class="line__text">margin-bottom: auto<br>(105px)</span>
+						</div>
+						<div class="demo__flex-container">			
+							<div class="demo__item m-l m-b" data-flex-item-sizes="95x95px"></div>
+							<div class="demo__item m-l m-b m-r" data-flex-item-sizes="95x95px"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example 4 -->
+			</div>
+			<p>
+				When flex items have oncoming margins a browser evenly distributes spacing between items.
+			</p>
+			<div class="page__demos">
+				<!-- start example 5 -->
+				<div class="demo">
+					<div class="demo__container">		
+						<div class="line line_h line_top line_left" style="--lineWidth: 109px;--lineTop: 73px;--lineTextTop: 20px;--lineTextLeft: 13px;--lineLeft: 192px;">
+							<span class="line__text">margin-left: auto (105px)</span>
+						</div>
+						<div class="line line_h line_top line_right" style="--lineWidth: 109px;--lineTop: 73px;--lineTextTop: -20px;--lineTextLeft: -57px;--lineRight: 192px;">
+							<span class="line__text">margin-right: auto (105px)</span>
+						</div>				
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 110px;--lineLeft: 118px;--lineTextLeft: 13px;--lineTextTop: -26px;">
+							<span class="line__text">margin-bottom: auto<br>(105px)</span>
+						</div>
+						<div class="line line_v line_bottom line_right" style="--lineHeight: 110px;--lineRight: 118px;--lineTextTop: -26px;--lineTextLeft: -135px;">
+							<span class="line__text">margin-bottom: auto<br>(105px)</span>
+						</div>
+						<div class="demo__flex-container">			
+							<div class="demo__item m-r m-b" data-flex-item-sizes="95x95px"></div>
+							<div class="demo__item m-l m-b" data-flex-item-sizes="95x95px"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example 5 -->
+			</div>
+			<p>
+				But the margins can't cross.
+			</p>
+			<div class="page__demos">
+				<!-- start example 6 -->
+				<div class="demo">
+					<div class="demo__container">		
+						<div class="line line_h line_bottom line_left" style="--lineWidth: 107px;--lineBottom: 30px;--lineTextTop: -20px;--lineTextLeft: 13px;--lineLeft: 192px;">
+							<span class="line__text">margin-right: auto (105px)</span>
+						</div>
+						<div class="line line_h line_top line_right" style="--lineWidth: 107px;--lineTop: 73px;--lineTextTop: -20px;--lineTextLeft: -59px;--lineRight: 192px;">
+							<span class="line__text">margin-left: auto (105px)</span>
+						</div>				
+						<div class="line line_v line_bottom line_left" style="--lineHeight: 145px;--lineLeft: 118px;--lineTextLeft: 13px;--lineTextTop: 55px;--lineBottom: 59px;">
+							<span class="line__text">margin-top: auto (140px)</span>
+						</div>
+						<div class="line line_v line_bottom line_right" style="--lineHeight: 145px;--lineRight: 118px;--lineTextTop: -52px;--lineTextLeft: -180px;">
+							<span class="line__text">margin-bottom: auto (140px)</span>
+						</div>
+						<div class="demo__flex-container">			
+							<div class="demo__item m-r m-t" data-flex-item-sizes="95x60px" style="height: 60px"></div>
+							<div class="demo__item m-b m-l" data-flex-item-sizes="95x60px" style="height: 60px"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end example 6 -->				
+			</div>
+		</main>
+	</div>
+</div>
+  </body>
+</html>
