@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The basics of CSS. Inline elements cheatsheet</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="page">
+		<div class="page__container">
+			<header class="page__header">
+				<h1>The basics of CSS. Inline elements</h1>
+				<p>
+					Before reading the cheatsheet you should look at the following graphic that I use to mark elements areas:
+				</p>
+				<div class="page__hints">
+					<span class="hint hint_container">the parent element's area</span>
+				<span class="hint hint_item">the child element's area</span>
+			</div>
+		</header>
+		<main class="page__content">
+			<h2>What is inline elements?</h2>
+			<p>The elements that have the inline value for the display property 
+				are known as inline elements. For example, the span, a, etc.</p>
+			<h2>Default behavior of inline elements</h2>
+			<p>
+				The width and height of inline elements is calculated automatically depending on the content. 
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element with some text</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				If the inline element content doesn't fit on the one line then a browser will move it on a new line. The width will be calculated depending on maximum line length.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element with some text "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, cumque?"</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				Also inline elements will be on the same line if there is space.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				If there isn't space, a browser will move an element on a new line.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>	
+			<h2>The width, height, padding, margin properties for inline elements</h2>
+			<p>
+				We can't set the width and height properties for inline elements. For example, I set 96px for the width and height for the span element.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box" style="width: 96px; height: 96px;">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box" style="width: 96px; height: 96px;">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				You can add paddings, borders and margins, but the top or bottom paddings, borders and margins will end up outside the parent.
+			</p>			
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box demo-box_setted-border">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box demo-box_setted-border">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>					
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">span element</span>
+							</span>																		
+						</div>
+					</div>
+				</div>
+			</div>			
+		</main>
+	</div>
+</div>
+  </body>
+</html>
