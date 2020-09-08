@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The basics of CSS. The flex container</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="page">
+		<div class="page__container">
+			<header class="page__header">
+				<h1>The basics of CSS. The flex container</h1>
+				<p>
+					Before reading the cheatsheet you should look at the following graphic that I use to mark elements areas:
+				</p>
+				<div class="page__hints">
+					<span class="hint hint_container">the viewport area</span>
+				<span class="hint hint_item">the flex container's area</span>
+			</div>
+		</header>
+		<main class="page__content">
+			<h2>What is a flex container?</h2>
+			<p>The elements that have the flex or inline-flex value for the display property 
+are known as a flex container.</p>
+			<h2>Default behavior of a flex container</h2>
+			<p>
+				Always elements with the display: flex are on a new line so it displays one below the other.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>				
+			<p>
+				If this elements have the computed value is inline-flex they will be on the same line if there is space. Also the white space in the HTML code will create some gap between elements.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">span element</span>
+							</span>
+							<span class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>							
+			<p>
+				The width of a elements with the display: flex fills up the horizontal space left and right on its parent element if it's there. If no, element fills up the viewport. The height is calculated depending on the content height. 
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element with longer text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo nobis unde eum tempora quos dolore cupiditate fuga. Laudantium, harum.</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box">
+								<span class="demo-box__text">span element with longer text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo nobis unde eum tempora quos dolore cupiditate fuga. Laudantium, harum.</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				The width and height of elements with the display: inline-flex is calculated automatically depending on of the content.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">div element</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">span element</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				If content of the element with the display: inline-flex doesn't fit on the one line then a browser will move it on a new line. The width will be calculated depending on maximum line length.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">div element with longer text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo nobis unde eum tempora quos dolore cupiditate fuga. Laudantium, harum.</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<span class="demo-box" style="display: inline-flex;">
+								<span class="demo-box__text">span element with longer text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo nobis unde eum tempora quos dolore cupiditate fuga. Laudantium, harum.</span>
+							</span>
+						</div>
+					</div>
+				</div>	
+			</div>	
+			<h2>The width, height, padding, margin properties for a flex container</h2>
+			<p>
+				We can set the width and height properties for a flex container.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-sizes">
+								<span class="demo-box__text">div element <br> 96x96px</span>
+							</div>
+							<span class="demo-box demo-box_setted-sizes">
+								<span class="demo-box__text">span element <br> 96x96px</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-sizes" style="display: inline-flex;">
+								<span class="demo-box__text">div element <br> 96x96px</span>
+							</div>
+							<span class="demo-box demo-box_setted-sizes" style="display: inline-flex;">
+								<span class="demo-box__text">span element <br> 96x96px</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				We can set the padding and border properties.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-padding" style="display: inline-flex;">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-padding" style="display: inline-flex;">
+								<span class="demo-box__text">span element</span>
+							</span>							
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				The margins of elements with the display: flex collapse. So we get that the margin-top property of the first child element and margin-bottom of the last child element ends up outside the parent.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>																		
+						</div>
+					</div>
+				</div>
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">span element</span>
+							</span>																		
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				But if we set the height, border or padding properties for the parent element the margin-top and margin-bottom will cease collapsing.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport" style="padding: 15px; background: var(--purple)">
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box">
+								<span class="demo-box__text">span element</span>
+							</span>												
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport" style="padding: 15px; background: var(--purple)">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">span element</span>
+							</span>												
+						</div>
+					</div>
+				</div>	
+			</div>		
+			<p>
+				When there are adjacent siblings with the display: flex, the margin-bottom of the top element collapses with the margin-top of the bottom element. The resulting size is the biggest between the two.
+			</p>			
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">span element</span>
+							</span>							
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+			</div>	
+			<p>
+				However, unlike the elements with the display: flex, the margins of the elements with the inline-flex don't collapse.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-margin" style="display: inline-flex;">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<span class="demo-box demo-box_setted-margin" style="display: inline-flex;">
+								<span class="demo-box__text">span element</span>
+							</span>																		
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</main>
+	</div>
+</div>
+  </body>
+</html>
