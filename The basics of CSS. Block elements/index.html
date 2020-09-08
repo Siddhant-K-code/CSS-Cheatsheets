@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The basics of CSS. Block elements</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page">
+	<div class="page__container">
+		<header class="page__header">
+			<h1>The basics of CSS. Block elements</h1>
+			<p>
+				Before reading the cheatsheet you should look at the following graphic that I use to mark elements areas:
+			</p>
+			<div class="page__hints">
+				<span class="hint hint_container">the parent element's area</span>
+				<span class="hint hint_item">the child element's area</span>
+			</div>
+		</header>
+		<main class="page__content">
+			<h2>What is block elements?</h2>
+			<p>The elements that have the block value for the display property 
+are known as block elements. For example, the div, p, etc.</p>
+			<h2>Default behavior of block elements</h2>
+			<p>
+				The width of block elements fills up the horizontal space left and right on its parent element if it's there. If no, block elements fills up the viewport. The height of block elements is calculated automatically depending on the height of the content. 
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				Also block elements always start on a new line so they display one below the other.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+			</div>
+			<h2>The width, height, padding, margin properties for block elements</h2>
+			<p>
+				We can set the width and height properties for block elements.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-sizes">
+								<span class="demo-box__text">div element <br> 96x96px</span>
+							</div>
+							<div class="demo-box demo-box_setted-sizes">
+								<span class="demo-box__text">div element <br> 96x96px</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				We can set the padding and border properties.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-padding">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+			</div>
+			<p>
+				When we set the margin property we get that the margin-top property of the first child element and margin-bottom of the last child element ends up outside the parent.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>																		
+						</div>
+					</div>
+				</div>
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>																		
+						</div>
+					</div>
+				</div>	
+			</div>			
+			<p>
+				But if we set the height, border or padding properties for the parent element the margin-top and margin-bottom will cease collapsing.
+			</p>
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport" style="padding: 15px; background: var(--purple)">
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>												
+						</div>
+					</div>
+				</div>	
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport" style="padding: 15px; background: var(--purple)">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>												
+						</div>
+					</div>
+				</div>	
+			</div>		
+			<p>
+				When there are adjacent siblings, the margin-bottom of the top element collapses with the margin-top of the bottom element. The resulting size is the biggest between the two.
+			</p>			
+			<div class="page__demos">
+				<div class="demo">
+					<div class="demo__container">
+						<div class="demo__viewport">
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>
+							<div class="demo-box demo-box_setted-margin">
+								<span class="demo-box__text">div element</span>
+							</div>							
+							<div class="demo-box">
+								<span class="demo-box__text">div element</span>
+							</div>							
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</main>
+	</div>
+</div>
+  </body>
+</html>
